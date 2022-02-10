@@ -183,6 +183,8 @@ public class FirstPersonController : MonoBehaviour
             if(mouseLocked)
             {
                 HandleMouseLook();
+                Cursor.lockState = CursorLockMode.Locked;
+                Cursor.visible = false;
             }
             if(!mouseLocked)
             {

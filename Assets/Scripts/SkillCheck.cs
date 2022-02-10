@@ -46,7 +46,7 @@ public class SkillCheck : MonoBehaviour
     {
         skillCheckTime = Random.Range(3,8);
         timer = 0;
-        position = new Vector2(Random.Range(0,390), Random.Range(0,160));
+        position = new Vector2(Random.Range(10,780), Random.Range(10,160));
     }
 
     private void Update()
@@ -58,10 +58,11 @@ public class SkillCheck : MonoBehaviour
             // starts the skill check
             if(timer >= skillCheckTime)
             {
+                print(position);
                 Instantiate(check, position, Quaternion.identity, skillCheckArea);
                 print("skillCheckTriggered");
                 timer = 0;
-                position = new Vector2(Random.Range(0,780), Random.Range(0,320));
+                position = new Vector2(Random.Range(10,780), Random.Range(10,320));
                 skillCheckTime = Random.Range(3,8);
                 Generator.generatorInstance.interacting = true;
                 StartCoroutine(SkillChecks());
@@ -76,9 +77,10 @@ public class SkillCheck : MonoBehaviour
             }
             else if(generatorTimer >= timeForGen)
             {
+                // WHen the Generator is finished
                 FirstPersonController.Instance.mouseLocked = true;
                 OverlayManager.Instance.OpenOverlay("base");
-                interacting = false;
+                Generator.generatorInstance.interacting = false;
                 Generator.generatorInstance.complete = true;
             }
 

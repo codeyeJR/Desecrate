@@ -25,10 +25,13 @@ public class Generator : Interactable
     
     public override void onInteract()
     {
-        // Interacting with the generatorr
-        FirstPersonController.Instance.mouseLocked = false;
-        print("interacted with " + gameObject.name);
-        interacting = true;
+        if(!interacting)
+        {
+            // Interacting with the generatorr
+            FirstPersonController.Instance.mouseLocked = false;
+            print("interacted with " + gameObject.name);
+            interacting = true;
+        }
     }
 
     public override void onLoseFocus()

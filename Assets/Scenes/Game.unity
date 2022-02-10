@@ -715,6 +715,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   interacting: 0
+  complete: 0
 --- !u!1 &124088068
 GameObject:
   m_ObjectHideFlags: 0
@@ -1207,6 +1208,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   interacting: 0
+  complete: 0
 --- !u!65 &152920681
 BoxCollider:
   m_ObjectHideFlags: 0
