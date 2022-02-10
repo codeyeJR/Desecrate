@@ -74,6 +74,13 @@ public class SkillCheck : MonoBehaviour
                 generatorTimer += Time.deltaTime;
                 timeElapsed.text = generatorTimer.ToString();
             }
+            else if(generatorTimer >= timeForGen)
+            {
+                FirstPersonController.Instance.mouseLocked = true;
+                OverlayManager.Instance.OpenOverlay("base");
+                interacting = false;
+                Generator.generatorInstance.complete = true;
+            }
 
         }
     }
@@ -92,6 +99,8 @@ public class SkillCheck : MonoBehaviour
         {
             // The resuls of a failed skill check
             print("Skill Check Failed");
+            generatorTimer -= 8;
+
         }
         // Destorys each instance of skill checks three seconds after one was created
         // Ensures that in event of a failure all skillchecks eventually get destroyed

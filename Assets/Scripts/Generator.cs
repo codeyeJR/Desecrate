@@ -6,6 +6,7 @@ public class Generator : Interactable
 {
     public static Generator generatorInstance;
     public bool interacting = false;   
+    public bool complete = false;
 
 
     void Start()
