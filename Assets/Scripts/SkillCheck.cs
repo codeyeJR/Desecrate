@@ -82,6 +82,7 @@ public class SkillCheck : MonoBehaviour
                 OverlayManager.Instance.OpenOverlay("base");
                 Generator.generatorInstance.interacting = false;
                 Generator.generatorInstance.complete = true;
+                Objectives.Instance.objectivesComplete += 1;
             }
 
         }

@@ -205,7 +205,7 @@ public class FirstPersonController : MonoBehaviour
 
             if(useFootsteps)
                 HandleFootsteps();
-
+                
             if(canInteract)
             {
                 HandleInteractionCheck();
