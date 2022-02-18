@@ -17,7 +17,7 @@ public class Generator : Interactable
     public override void onFocus()
     {
         // Looking at Generator
-        if(!interacting)
+        if(!interacting && !complete)
         {
         OverlayManager.Instance.OpenOverlay("interact");
         }
@@ -25,7 +25,7 @@ public class Generator : Interactable
     
     public override void onInteract()
     {
-        if(!interacting)
+        if(!interacting && !complete)
         {
             // Interacting with the generatorr
             FirstPersonController.Instance.mouseLocked = false;

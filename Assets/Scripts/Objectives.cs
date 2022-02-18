@@ -4,15 +4,29 @@ using UnityEngine;
 
 public class Objectives : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    public float objectivesComplete;
+    public static Objectives Instance;
+    
+    private void Awake()
     {
-        
+        Instance = this;
     }
 
-    // Update is called once per frame
+    void Start()
+    {
+        objectivesComplete = 0;
+    }
+
     void Update()
     {
-        
+        if(objectivesComplete >= 4)
+        {
+            onFinalGenCompleted();
+        }
+    }
+
+    void onFinalGenCompleted()
+    {
+        print("End Game started");
     }
 }
