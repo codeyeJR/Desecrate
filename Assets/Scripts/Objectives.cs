@@ -22,6 +22,7 @@ public class Objectives : MonoBehaviour
         if(objectivesComplete >= 4)
         {
             onFinalGenCompleted();
+            print(objectivesComplete);
         }
     }
 
