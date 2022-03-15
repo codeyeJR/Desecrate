@@ -11,6 +11,7 @@ public class RoomListItem : MonoBehaviour
 
     public RoomInfo info;
 
+    // Seting up a Player Room Object
     public void SetUp(RoomInfo _info)
     {
         info = _info;

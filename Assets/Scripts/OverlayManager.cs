@@ -11,7 +11,7 @@ public class OverlayManager : MonoBehaviour
     {
         Instance = this;
     }
-
+        // Opening a new overlay
         public void OpenOverlay(string overlayName)
     {
         for(int i =0; i< overlays.Length; i++)
@@ -22,11 +22,13 @@ public class OverlayManager : MonoBehaviour
             }
             else if(overlays[i].open)
             {
+                // Calls the function that closes the overlay
                 CloseOverlay(overlays[i]);
             }
         }
     }
 
+    // Opens new overlay
     public void OpenOverlay(Overlay overlay)
     {
           for(int i =0; i< overlays.Length; i++)
@@ -39,6 +41,7 @@ public class OverlayManager : MonoBehaviour
         overlay.Open();
     }
 
+    // Closes the overlay
     public void CloseOverlay(Overlay overlay)
     {
         overlay.Close();

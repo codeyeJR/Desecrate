@@ -21,6 +21,7 @@ public class Objectives : MonoBehaviour
     {
         if(objectivesComplete >= 4)
         {
+            // Starting the last phase of the game
             onFinalGenCompleted();
             print(objectivesComplete);
         }

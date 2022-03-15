@@ -7,6 +7,7 @@ public class Menu : MonoBehaviour
     public string menuName;
     public bool open;
 
+    // Handles eveything for the main menu
     public void Open() 
     {
         open = true;

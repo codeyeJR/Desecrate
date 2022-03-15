@@ -15,6 +15,7 @@ public class PlayerListItem : MonoBehaviourPunCallbacks
         text.text = _player.NickName;
     }
 
+    // Destroying the Player name Object when a player leaves the room
     public override void OnPlayerLeftRoom(Player otherPlayer)
     {
         if(player == otherPlayer)
@@ -23,6 +24,7 @@ public class PlayerListItem : MonoBehaviourPunCallbacks
         }
     }
 
+    // Waht to do when the user leaves the room
     public override void OnLeftRoom()
     {
         Destroy(gameObject);

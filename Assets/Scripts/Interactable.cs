@@ -4,6 +4,7 @@ using UnityEngine;
 
 public abstract class Interactable : MonoBehaviour
 {
+  // defines the objects that the Player can interact with
   public virtual void Awake()
   {
     gameObject.layer = 8;

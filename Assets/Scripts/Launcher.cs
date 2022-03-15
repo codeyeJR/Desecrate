@@ -32,12 +32,15 @@ public class Launcher : MonoBehaviourPunCallbacks
         PhotonNetwork.ConnectUsingSettings();        
     }
 
+    // When connected to the Photon Master Server
     public override void OnConnectedToMaster()
     {
         Debug.Log("Connected to Master");
         PhotonNetwork.JoinLobby();
         PhotonNetwork.AutomaticallySyncScene = true;
     }
+
+    // When connected to my private server within the Photon Master Server
     public override void OnJoinedLobby()
     {
         MenuManager.Instance.OpenMenu("title");
@@ -97,12 +100,14 @@ public class Launcher : MonoBehaviourPunCallbacks
         MenuManager.Instance.OpenMenu("loading");
     }
 
+    // Joining the Room
     public void JoinRoom(RoomInfo info)
     {
         PhotonNetwork.JoinRoom(info.Name);
         MenuManager.Instance.OpenMenu("loading");
     }
 
+    // Leaving the room
     public override void OnLeftRoom()
     {
         MenuManager.Instance.OpenMenu("title");
@@ -111,6 +116,7 @@ public class Launcher : MonoBehaviourPunCallbacks
     // Updating the Room List
     public override void OnRoomListUpdate(List<RoomInfo> roomList)
     {
+        // Goes through each individual room and creates a RoomListItem for it
         foreach(Transform trans in roomListContent)
             Destroy(trans.gameObject);
         for(int i =0; i < roomList.Count; i++)
@@ -121,6 +127,7 @@ public class Launcher : MonoBehaviourPunCallbacks
         }
     }
 
+    // Creates a Player Name whenever a player enters a room
     public override void OnPlayerEnteredRoom(Player newPlayer)
     {
         Instantiate(playerListItemPrefab, playerListContent).GetComponent<PlayerListItem>().SetUp(newPlayer);

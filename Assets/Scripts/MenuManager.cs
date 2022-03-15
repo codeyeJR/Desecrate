@@ -12,6 +12,7 @@ public class MenuManager : MonoBehaviour
         Instance = this;
     }
 
+    // Opens the menu
     public void OpenMenu(string menuName)
     {
         for(int i =0; i< menus.Length; i++)
@@ -27,6 +28,7 @@ public class MenuManager : MonoBehaviour
         }
     }
 
+    // Opens a new menu
     public void OpenMenu(Menu menu)
     {
           for(int i =0; i< menus.Length; i++)
@@ -39,6 +41,7 @@ public class MenuManager : MonoBehaviour
         menu.Open();
     }
 
+    // Closes the menu
     public void CloseMenu(Menu menu)
     {
         menu.Close();

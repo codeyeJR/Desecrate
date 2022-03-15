@@ -15,6 +15,7 @@ public class PlayerManager : MonoBehaviour
 
     void Start()
     {
+        // ensuring that the user can control the player
         if(PV.IsMine)
         {
             CreateController();
@@ -23,7 +24,7 @@ public class PlayerManager : MonoBehaviour
 
     void CreateController()
     {
-        
+        // Instatiating the player
         PhotonNetwork.Instantiate("PlayerController", Vector3.zero, Quaternion.identity);
     }
 }
