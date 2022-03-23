@@ -112,10 +112,12 @@ public class FirstPersonController : MonoBehaviour
     {
         get
         {
+            // If currently on slope
             if(characterController.isGrounded && Physics.Raycast(transform.position, Vector3.down, out RaycastHit slopeHit, 2f))
             {
                 hitPointNormal = slopeHit.normal;
                 return Vector3.Angle(hitPointNormal, Vector3.up) > characterController.slopeLimit;
+                // This will return true when it deems the slope is steep enough to slide down
             }
             else
             {

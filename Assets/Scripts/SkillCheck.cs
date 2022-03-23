@@ -105,7 +105,7 @@ public class SkillCheck : MonoBehaviour
             generatorTimer -= 8;
 
         }
-        // Destorys each instance of skill checks three seconds after one was created
+        // Destroys each instance of skill checks three seconds after one was created
         // Ensures that in event of a failure all skillchecks eventually get destroyed
         foreach (Transform child in skillCheckArea.transform) 
         {

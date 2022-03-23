@@ -16,7 +16,7 @@ public class Generator : Interactable
 
     public override void onFocus()
     {
-        // Looking at Generator
+        // Looking at Objective, opens the overlay
         if(!interacting && !complete)
         {
         OverlayManager.Instance.OpenOverlay("interact");
@@ -27,16 +27,15 @@ public class Generator : Interactable
     {
         if(!interacting && !complete)
         {
-            // Interacting with the generatorr
+            // Interacting with the Objective, locks the camera
             FirstPersonController.Instance.mouseLocked = false;
-            print("interacted with " + gameObject.name);
             interacting = true;
         }
     }
 
     public override void onLoseFocus()
     {
-        // No longer looking at Generator
+        // No longer looking at Objective, clears overlay 
         FirstPersonController.Instance.mouseLocked = true;
         OverlayManager.Instance.OpenOverlay("base");
         interacting = false;
